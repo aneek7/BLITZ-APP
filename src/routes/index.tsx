@@ -108,7 +108,7 @@ function Home() {
         </div>
 
         {/* Hero text and button */}
-        <div className="absolute inset-x-0 bottom-0 z-20 animate-rise px-5 pb-5">
+        <div className="absolute inset-x-0 bottom-0 z-20 animate-rise px-5 pb-32">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
             MNIT Jaipur · Annual Cultural Fest
           </p>
