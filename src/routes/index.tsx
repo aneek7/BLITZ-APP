@@ -16,7 +16,6 @@ import {
 import {
   TopBar,
   FestImage,
-  EventCard,
   SectionTitle,
 } from "@/components/fest";
 
@@ -352,32 +351,6 @@ function Home() {
                 {label}
               </span>
             </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* FEATURED EXPERIENCES */}
-      <section className="mt-10">
-        <SectionTitle
-          title="Featured experiences"
-          action={
-            <Link
-              to="/events"
-              className="text-sm text-primary"
-            >
-              See all
-            </Link>
-          }
-        />
-
-        <div className="no-scrollbar flex snap-x gap-4 overflow-x-auto px-5 pb-2">
-          {events.map((event) => (
-            <div
-              key={event.id}
-              className="shrink-0 snap-start"
-            >
-              <EventCard event={event} />
-            </div>
           ))}
         </div>
       </section>
