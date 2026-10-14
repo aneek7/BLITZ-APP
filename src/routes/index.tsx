@@ -1,5 +1,7 @@
 
 import { createFileRoute, Link } from "@tanstack/react-router";
+import type { CSSProperties } from "react";
+
 import {
   ArrowRight,
   Music,
@@ -52,7 +54,7 @@ const cats = [
   { label: "Cultural", icon: Sparkles },
 ] as const;
 
-// Deterministic sparkle positions and speeds
+// Subtle pink-purple falling sparkles
 const sparkles = Array.from({ length: 70 }, (_, i) => ({
   id: i,
   left: `${(i * 37.7) % 100}%`,
@@ -67,19 +69,21 @@ function Home() {
     <div>
       {/* HERO SECTION */}
       <section className="relative h-[86vh] min-h-[560px] overflow-hidden">
+
+        {/* Concert background image */}
         <img
-  src="/blitz-hero.webp"
-  alt="Blitzschlag concert"
-  className="absolute inset-0 h-full w-full object-cover"
-  loading="eager"
-  fetchPriority="high"
-  decoding="async"
-/>
+          src="/blitz-hero.webp"
+          alt="Blitzschlag concert"
+          className="absolute inset-0 h-full w-full object-cover"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
 
         {/* Dark gradient for text readability */}
         <div className="absolute inset-0 bg-scrim-fade" />
 
-        {/* Falling sparkles */}
+        {/* Falling pink-purple sparkles */}
         <div
           className="pointer-events-none absolute inset-0 z-10 overflow-hidden"
           aria-hidden="true"
@@ -96,7 +100,7 @@ function Home() {
                   animationDelay: sparkle.delay,
                   animationDuration: sparkle.duration,
                   "--sparkle-drift": sparkle.drift,
-                } as React.CSSProperties
+                } as CSSProperties
               }
             />
           ))}
@@ -114,8 +118,8 @@ function Home() {
           </p>
 
           <h1 className="font-display text-[clamp(36px,11vw,54px)] leading-none tracking-tight text-white whitespace-nowrap">
-  BLITZSCHLAG
-</h1>
+            BLITZSCHLAG
+          </h1>
 
           <p className="mt-3 text-lg text-gradient font-semibold">
             Experience the Extraordinary
@@ -148,7 +152,9 @@ function Home() {
               className="flex shrink-0 flex-col items-center gap-2 rounded-2xl border border-border bg-card px-5 py-4 transition hover:bg-accent"
             >
               <Icon className="h-6 w-6 text-primary" />
-              <span className="text-xs font-medium">{label}</span>
+              <span className="text-xs font-medium">
+                {label}
+              </span>
             </Link>
           ))}
         </div>
@@ -179,7 +185,10 @@ function Home() {
         <SectionTitle
           title="Festival highlights"
           action={
-            <Link to="/past-events" className="text-sm text-primary">
+            <Link
+              to="/past-events"
+              className="text-sm text-primary"
+            >
               Past editions
             </Link>
           }
