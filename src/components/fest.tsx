@@ -55,8 +55,10 @@ export function Logo() {
         <Zap className="h-4 w-4 fill-current" />
       </span>
       <span className="leading-none">
-        <span className="block font-display text-sm font-extrabold tracking-widest">BLITZSCHLAG</span>
-        <span className="block text-[10px] tracking-wider text-muted-foreground">MNIT JAIPUR</span>
+        <span className="block font-display text-3xl leading-none tracking-wide">
+  BLITZSCHLAG
+</span>
+        <span className="block text-[13px] tracking-wider text-muted-foreground">MNIT JAIPUR</span>
       </span>
     </Link>
   );

@@ -37,9 +37,9 @@ function Home() {
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
             MNIT Jaipur · Annual Cultural Fest
           </p>
-          <h1 className="mt-3 w-full text-[clamp(1.5rem,7vw,2rem)] font-extrabold leading-tight tracking-[-0.05em]">
-             BLITZSCHLAG
-          </h1>
+          <h1 className="font-display text-7xl leading-tight text-white">
+  BLITZSCHLAG
+</h1>
           <p className="mt-3 text-lg text-gradient font-semibold">Experience the Extraordinary</p>
           <Link
             to="/events"

@@ -1,18 +1,30 @@
+
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
 
+/* Custom heading font */
+@font-face {
+  font-family: "Just Fontime";
+  src: url("/fonts/Just%20Fontime.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Syne", system-ui, sans-serif;
+  --font-display: "Just Fontime", cursive;
   --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -36,78 +48,132 @@
   --color-ring: var(--ring);
 }
 
+/* Warm, muted festival colour palette */
 :root {
   --radius: 1rem;
-  --background: oklch(0.13 0.01 290);
-  --foreground: oklch(1 0 0);
-  --card: oklch(0.2 0.025 295);
-  --card-foreground: oklch(1 0 0);
-  --popover: oklch(0.2 0.025 295);
-  --popover-foreground: oklch(1 0 0);
-  --primary: oklch(0.63 0.25 304);
-  --primary-foreground: oklch(1 0 0);
-  --magenta: oklch(0.67 0.26 322);
-  --secondary: oklch(0.24 0.03 295);
-  --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.24 0.03 295);
-  --muted-foreground: oklch(0.77 0.02 295);
-  --accent: oklch(0.28 0.06 300);
-  --accent-foreground: oklch(1 0 0);
-  --scrim: oklch(0.13 0.01 290);
-  --destructive: oklch(0.65 0.22 25);
+
+  --background: oklch(0.14 0.015 310);
+  --foreground: oklch(0.97 0.012 75);
+
+  --card: oklch(0.21 0.028 310);
+  --card-foreground: oklch(0.97 0.012 75);
+
+  --popover: oklch(0.21 0.028 310);
+  --popover-foreground: oklch(0.97 0.012 75);
+
+  --primary: oklch(0.65 0.15 325);
+  --primary-foreground: oklch(0.99 0.005 75);
+
+  --magenta: oklch(0.68 0.14 350);
+
+  --secondary: oklch(0.26 0.035 315);
+  --secondary-foreground: oklch(0.97 0.012 75);
+
+  --muted: oklch(0.25 0.025 310);
+  --muted-foreground: oklch(0.76 0.025 310);
+
+  --accent: oklch(0.32 0.055 325);
+  --accent-foreground: oklch(0.98 0.01 75);
+
+  --scrim: oklch(0.13 0.015 310);
+
+  --destructive: oklch(0.65 0.18 25);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(1 0 0 / 9%);
+
+  --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.63 0.25 304);
-  --gradient-accent: linear-gradient(120deg, var(--primary), var(--magenta));
-  --gradient-scrim: linear-gradient(180deg, transparent 30%, color-mix(in oklab, var(--scrim) 70%, transparent) 65%, var(--scrim) 100%);
-  --shadow-glow: 0 12px 40px -12px color-mix(in oklab, var(--primary) 60%, transparent);
+  --ring: oklch(0.65 0.15 325);
+
+  --gradient-accent: linear-gradient(
+    120deg,
+    var(--primary),
+    var(--magenta)
+  );
+
+  --gradient-scrim: linear-gradient(
+    180deg,
+    transparent 30%,
+    color-mix(in oklab, var(--scrim) 70%, transparent) 65%,
+    var(--scrim) 100%
+  );
+
+  --shadow-glow: 0 12px 40px -12px
+    color-mix(in oklab, var(--primary) 35%, transparent);
 }
 
+/* Custom Tailwind utilities */
 @utility bg-gradient-accent {
   background-image: var(--gradient-accent);
 }
+
 @utility bg-scrim-fade {
   background-image: var(--gradient-scrim);
 }
+
 @utility text-gradient {
   background-image: var(--gradient-accent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
+
 @utility shadow-glow {
   box-shadow: var(--shadow-glow);
 }
+
 @utility no-scrollbar {
   scrollbar-width: none;
+
   &::-webkit-scrollbar {
     display: none;
   }
 }
 
+/* Global styling */
 @layer base {
   * {
     border-color: var(--color-border);
   }
+
   html {
     background-color: var(--color-background);
   }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
   }
 }
 
-@keyframes rise {
-  from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: none; }
+/* Apply Just Fontime to Tailwind display-font elements */
+.font-display {
+  font-family: "Just Fontime", cursive;
 }
+
+/* Entrance animation */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @utility animate-rise {
   animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
