@@ -33,7 +33,7 @@ function Home() {
         <TopBar overlay />
         <FestImage photo={photos.hero} eager className="absolute inset-0 h-full" showBadge={false} />
         <div className="absolute inset-0 bg-scrim-fade" />
-        <div className="absolute inset-x-0 bottom-0 animate-rise px-5 pb-10">
+        <div className="absolute inset-x-0 bottom-0 animate-rise px-5 pb-5">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
             MNIT Jaipur · Annual Cultural Fest
           </p>
@@ -51,7 +51,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="mt-8">
+      <section className="mt-2">
         <SectionTitle title="Explore categories" />
         <div className="no-scrollbar flex gap-3 overflow-x-auto px-5">
           {cats.map(({ label, icon: Icon }) => (
