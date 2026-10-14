@@ -127,7 +127,7 @@ export function BottomNav() {
   ];
 
   // Change this to true when the official logo is available
-  const hasOfficialLogo = false;
+  const hasOfficialLogo = true;
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-40 mx-auto max-w-md px-4 pb-4">
