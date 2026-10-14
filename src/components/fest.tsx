@@ -47,18 +47,25 @@ export function FestImage({
     </div>
   );
 }
-
 export function Logo() {
   return (
-    <Link to="/" className="flex items-center gap-2">
-      <span className="grid h-8 w-8 place-items-center rounded-xl bg-gradient-accent shadow-glow">
-        <Zap className="h-4 w-4 fill-current" />
-      </span>
-      <span className="leading-none">
+    <Link to="/" className="flex items-center gap-3">
+      {/* Blitzschlag logo */}
+      <img
+        src="/blitz-logo.png"
+        alt="Blitzschlag Logo"
+        className="h-11 w-11 shrink-0 rounded-full object-contain"
+      />
+
+      {/* Festival name */}
+      <span className="flex flex-col">
         <span className="block font-display text-3xl leading-none tracking-wide">
-  BLITZSCHLAG
-</span>
-        <span className="block text-[13px] tracking-wider text-muted-foreground">MNIT JAIPUR</span>
+          BLITZSCHLAG
+        </span>
+
+        <span className="block text-[13px] tracking-wider text-muted-foreground">
+          MNIT JAIPUR
+        </span>
       </span>
     </Link>
   );
