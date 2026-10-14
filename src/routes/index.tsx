@@ -108,14 +108,14 @@ function Home() {
         </div>
 
         {/* Hero text and button */}
-        <div className="absolute inset-x-0 bottom-0 z-20 animate-rise px-5 pb-32">
+        <div className="absolute inset-x-0 bottom-0 z-20 animate-rise px-5 pb-5">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
             MNIT Jaipur · Annual Cultural Fest
           </p>
 
-          <h1 className="font-display text-[clamp(28px,9vw,44px)] leading-tight text-white whitespace-nowrap">
-            BLITZSCHLAG
-          </h1>
+          <h1 className="font-display text-[clamp(36px,11vw,54px)] leading-none tracking-tight text-white whitespace-nowrap">
+  BLITZSCHLAG
+</h1>
 
           <p className="mt-3 text-lg text-gradient font-semibold">
             Experience the Extraordinary
