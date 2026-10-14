@@ -32,9 +32,9 @@ function EventDetail() {
         <FestImage photo={event.photo} eager className="aspect-[4/5]" />
         <div className="absolute inset-0 bg-scrim-fade" />
         <Link
-          to="/events"
-          search={{ category: undefined }}
-          aria-label="Back to events"
+  to="/events"
+  search={{ category: "" }}
+  aria-label="Back to events"
           className="absolute left-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-scrim/60 backdrop-blur"
         >
           <ChevronLeft className="h-5 w-5" />
