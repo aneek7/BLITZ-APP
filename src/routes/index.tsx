@@ -68,10 +68,13 @@ function Home() {
       {/* HERO SECTION */}
       <section className="relative h-[86vh] min-h-[560px] overflow-hidden">
         <img
-          src="/blitz-hero.png"
-          alt="Blitzschlag concert"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+  src="/blitz-hero.webp"
+  alt="Blitzschlag concert"
+  className="absolute inset-0 h-full w-full object-cover"
+  loading="eager"
+  fetchPriority="high"
+  decoding="async"
+/>
 
         {/* Dark gradient for text readability */}
         <div className="absolute inset-0 bg-scrim-fade" />
